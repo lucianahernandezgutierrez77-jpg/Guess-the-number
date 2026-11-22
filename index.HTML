@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <main id="game-page"></main>
+        <main id="game-page">
         <h1>Guess the number</h1>
         <p>I'm thinking of a number between 1 and 100.</p>
         <div class="game-container">
@@ -19,5 +19,21 @@
         <p id="feedback">Let's see if you can guess it!!</p>
 
         <p id="attempts">Attempts: 0</p>
+      </main>
+
+      <!--victory page-->
+      <main id="victory-page" class="hidden">
+
+        <h1>Congratulations :)</h1>
+        <p>You guessed the secret number!!</p>
+
+        <div class="victory-number">
+        <span id="secret-number"></span>
+
+        <p id="final-attemps"></p>
+        <button id="restart-btn">PLAY AGAIN</button>
+        </div>
+      </main>
+      <script src="script.js"></script>
     </body>
 </html>
