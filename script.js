@@ -4,17 +4,20 @@ const victoryPage = document.getElementById("victory-page");
 const guessButton = document.getElementById("guess-btn");
 const feedback = document.getElementById("feedback");
 const finalAttempts = document.getElementById("final-attempts");
+const restardButton = document.getElementById("restart-btn");
+const secretNumberDisplay = document.getElementById("attempts");
+const attemptsDisplay = document.getElementById("attempts");
 
-guessButton.addEventListener("click", checkGuess);
 
-function selectTheNumber() {
-    secretNumber = Math.floor(Math.random()*100) + 1;
-}
-
+let attempts = 0;
 let secretNumber;
 selectTheNumber();
 
-let attempts = 0;
+function selectTheNumber() {
+    secretNumber = Math.floor(Math.random()*100) + 1;
+    console.log(secretNumber);
+}
+
 
 function checkGuess() {
     const guess = Number(guessinput.value);
@@ -41,7 +44,12 @@ function checkGuess() {
     }
 }
 
+guessButton.addEventListener("click", checkGuess);
+
 function showVictory() {
+
+    console.log("executed");
+
     secretNumberDisplay.textContent = secretNumber;
 
     finalAttempts.textContent = "You found it in " + attempts + "attempts!";

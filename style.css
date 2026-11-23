@@ -24,7 +24,8 @@ body {
     background: var(--background);
 }
 
-#game-page {
+#game-page,
+#victory-page {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -88,6 +89,14 @@ body {
 
 .game-container {
     
+}
+
+#restart-btn {
+    border-radius: 5px;
+    color: var(--electric);
+    background-color: var(--ice);
+    font-weight: bold;
+    padding: 14px 30px;
 }
 
 .hidden {
