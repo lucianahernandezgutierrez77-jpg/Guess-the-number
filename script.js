@@ -4,7 +4,7 @@ const victoryPage = document.getElementById("victory-page");
 const guessButton = document.getElementById("guess-btn");
 const feedback = document.getElementById("feedback");
 const finalAttempts = document.getElementById("final-attempts");
-const restardButton = document.getElementById("restart-btn");
+const restartButton = document.getElementById("restart-btn");
 const secretNumberDisplay = document.getElementById("attempts");
 const attemptsDisplay = document.getElementById("attempts");
 
@@ -56,4 +56,18 @@ function showVictory() {
 
     gamePage.classList.add("hidden");
     victoryPage.classList.remove("hidden");
+}
+
+restartButton.addEventListener("click", playAgain);
+
+function playAgain() {
+    selectTheNumber();
+    attempts = 0;
+
+    guessinput.value = "";
+    attemptsDisplay.textContent = "Attemps = 0 ";
+    feedback.textContent = "Let's see if you can guess it!";
+
+    gamePage.classList.remove("hidden");
+    victoryPage.classList.add("hidden");
 }

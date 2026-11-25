@@ -7,11 +7,12 @@
     --main-text: #EAF6FF;
     --secondary-text: #a9bdd9;
     --moonlight: #bff8ecf1;
-    --neon: #00F5D4;
+    --neon: #00f5d4e2;
+    --golden: #F5C451;
     --background: linear-gradient(
         135deg,
-        #3965be,
-        #3456a4,
+        #315fbc,
+        #2a4ea2,
         #263d78
     );
 }
@@ -20,7 +21,7 @@ body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     margin: 0;
-    color: var(--neon);
+    color: var(--golden);
     background: var(--background);
 }
 
@@ -41,9 +42,6 @@ body {
     font-style: italic ;
     font-size: 60px;
     margin: 0;
-    text-shadow:
-        0 0 5px rgba(234, 246, 255, 0.6),
-        0 0 12px rgba(191, 248, 236, 0.35);
 }
 
 #game-page h1:hover {
@@ -64,16 +62,17 @@ body {
     border-radius: 5px;
     padding: 14px 16px;
     width: 300px;
-    border: 3px solid var(--electric);
+    border: 2px solid var(--secondary-text);
     transition: 0.3s ease;
     font-size: 16px;
     outline: none;
     box-sizing: border-box;
-    background-color: #D6A84B;
+    background-color: var(--secondary-text);
+    color: var(--midnight)
 }
 
 #guess-input:focus {
-    border-color: var(--neon);
+    border-color: var(--golden);
     box-shadow: 0 0 12px rgba(167,139, 250, 0.25);
 }
 
@@ -92,7 +91,6 @@ body {
     transform: translateY(0);
     box-shadow: 0 0 25px rgba(214, 189, 255, 0, 0.8);
     color: var(--moonlight);
-    transform: translateY(15px);
     border-color: #00F5D4;
 }
 
