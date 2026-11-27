@@ -43,7 +43,22 @@ function checkGuess() {
         feedback.textContent = "Too high! Try a lower number";
     } else {
         showVictory();
+        return;
     }
+
+    const difference = Math.abs(guess - secretNumber);
+    const direction = guess < secretNumber ? "higher" : "lower";
+
+    if (difference <= 3) {
+        feedback.textContent = "Burning hot! Just a tiny bit " + direction;
+    } else if (difference <= 10) {
+        feedback.textContent = "Very close! Go " + direction;
+    } else if (difference <= 25){
+        feedback.textContent = "Getting warm. Try " + direction;
+    } else {
+        feedback.textContent = "Far away! Try much " + direction;
+    }
+
 }
 
 guessButton.addEventListener("click", checkGuess);
