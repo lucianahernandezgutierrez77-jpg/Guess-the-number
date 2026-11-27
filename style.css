@@ -1,5 +1,5 @@
 :root {
-    --midnight: #080f1f;
+    --midnight: #786dcb;
     --deep: #101e38;
     --mystic: #527bce;
     --electric: #76a9fa;
@@ -8,12 +8,12 @@
     --secondary-text: #a9bdd9;
     --moonlight: #bff8ecf1;
     --neon: #00f5d4e2;
-    --golden: #F5C451;
+    --golden: #eeea13;
     --background: linear-gradient(
         135deg,
-        #315fbc,
-        #2a4ea2,
-        #263d78
+        #20155b,
+        #203f86,
+        #18274a
     );
 }
 
@@ -42,6 +42,7 @@ body {
     font-style: italic ;
     font-size: 60px;
     margin: 0;
+    transition: 0.3s ease;
 }
 
 #game-page h1:hover {
@@ -71,51 +72,111 @@ body {
     color: var(--midnight)
 }
 
+#guess-input:focus::placeholder {
+    color: transparent;
+}
+
 #guess-input:focus {
     border-color: var(--golden);
-    box-shadow: 0 0 12px rgba(167,139, 250, 0.25);
+    box-shadow: 0 0 12px rgba(238, 234, 19);
+}
+
+#guess-input:not(:placeholder-shown) {
+    font-size: 60px;
 }
 
 #guess-btn {
     font-size: 16px;
     border-radius: 5px;
-    border: 3px;
-    background-color: var(--electric);
+    background-color: var(--midnight);
     padding: 14px 30px;
-    color: var(--ice);
+    color: var(--main-text);
     font-weight: bold;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #guess-btn:hover {
     background-color: var(--mystic);
-    transform: translateY(0);
-    box-shadow: 0 0 25px rgba(214, 189, 255, 0, 0.8);
     color: var(--moonlight);
-    border-color: #00F5D4;
-}
-
-.game-container {
-    
+    border-color: var(--neon);
+    transform: translateY(-3px);
 }
 
 #victory-page h1 {
     font-size: 65px;
     font-style: oblique;
-    color: var(--moonlight);
+    color: var(--golden);
     margin: 0;
 }
 
 #victory-page p {
     font-size: 20px;
-    color: var(--electric);
+    color: var(--ice);
+}
+
+.victory-number {
+    flex-direction: column;
+    gap:10px;
+    display: flex;
+    align-items: center;
+    color: var(--ice)
+}
+
+#secret-number {
+    font-size: 100px;
+    font-weight: bold;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--deep);
+    justify-content: center;
+    align-items: center;
+    animation: reveal 0.90s ease-out, glow 3.5s ease-in-out infinite 0.6s;
+}
+
+@keyframes reveal {
+    from {
+        transform: scale(0.3) rotate(-90deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(245, 196, 81, 0.5),
+            inset 0 0 25px rgba(0, 245, 212, 0.15);
+    }
+    50% {
+        box-shadow:
+            0 0 40px rgba(238, 234, 19),
+            inset 0 0 35px rgba(0, 245, 212, 0.3);
+    }
 }
 
 #restart-btn {
     border-radius: 5px;
-    color: var(--electric);
-    background-color: var(--ice);
+    color: var(--main-text);
+    background-color: var(--midnight);
     font-weight: bold;
     padding: 14px 30px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+#restart-btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--golden);
+    color: var(--deep);
+    border-color: var(--golden);
 }
 
 .hidden {

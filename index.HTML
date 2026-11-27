@@ -7,27 +7,27 @@
     </head>
 
     <body>
+        <!--what people see first-->
         <main id="game-page">
         <h1>Guess the number</h1>
         <p>I'm thinking of a number between 1 and 100.</p>
-        <div class="game-container">
+
             <input type="text" id="guess-input" placeholder="Enter your guess...">
-        </div>
             <button id="guess-btn">
                 SUBMIT GUESS
             </button>
-        </div>
+
         <p id="feedback">Let's see if you can guess it!!</p>
 
         <p id="attempts">Attempts: 0</p>
       </main>
 
-      <!--victory page-->
+      <!--hidden until the user wins -->
       <main id="victory-page" class="hidden">
 
         <h1>Congratulations :)</h1>
         <p>You guessed the secret number!!</p>
-
+        
         <div class="victory-number">
         <span id="secret-number"></span>
 
@@ -35,6 +35,7 @@
         <button id="restart-btn">PLAY AGAIN</button>
         </div>
       </main>
+      <audio id="music" src="sounds/music.mp3"></audio>
       <script src="script.js"></script>
     </body>
 </html>

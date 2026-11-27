@@ -1,3 +1,4 @@
+// grabbing everything I need from the page
 const guessinput = document.getElementById("guess-input");
 const gamePage = document.getElementById("game-page");
 const victoryPage = document.getElementById("victory-page");
@@ -5,7 +6,7 @@ const guessButton = document.getElementById("guess-btn");
 const feedback = document.getElementById("feedback");
 const finalAttempts = document.getElementById("final-attempts");
 const restartButton = document.getElementById("restart-btn");
-const secretNumberDisplay = document.getElementById("attempts");
+const secretNumberDisplay = document.getElementById("secret-number");
 const attemptsDisplay = document.getElementById("attempts");
 
 
@@ -13,6 +14,7 @@ let attempts = 0;
 let secretNumber;
 selectTheNumber();
 
+// 
 function selectTheNumber() {
     secretNumber = Math.floor(Math.random()*100) + 1;
     console.log(secretNumber);
@@ -33,7 +35,7 @@ function checkGuess() {
 
     attempts++;
 
-    attemptsDisplay.textContent = "Attempts: " + attempts;
+    attemptsDisplay.textContent = "Attempts: " +  attempts;
 
     if (guess < secretNumber) {
         feedback.textContent = "Too low! Try a higher number.";
