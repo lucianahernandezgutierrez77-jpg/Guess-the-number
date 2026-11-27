@@ -13,13 +13,15 @@
         <p>I'm thinking of a number between 1 and 100.</p>
 
             <input type="text" id="guess-input" placeholder="Enter your guess...">
+        
+            <p id="attempts">Attempts: 0</p>
+
             <button id="guess-btn">
                 SUBMIT GUESS
             </button>
 
-        <p id="feedback">Let's see if you can guess it!!</p>
+            <p id="feedback"></p>
 
-        <p id="attempts">Attempts: 0</p>
       </main>
 
       <!--hidden until the user wins -->
@@ -34,6 +36,12 @@
         <p id="final-attempts"></p>
         <button id="restart-btn">PLAY AGAIN</button>
         </div>
+      </main>
+
+      <!--hidden until-->
+      <main id="-page" class="hidden">
+        <h1></h1>
+        <p></p>
       </main>
       <audio id="music" src="sounds/music.mp3"></audio>
       <script src="script.js"></script>

@@ -23,6 +23,7 @@ body {
     margin: 0;
     color: var(--golden);
     background: var(--background);
+    overflow-x: hidden;
 }
 
 #game-page,
@@ -35,6 +36,34 @@ body {
     gap: 25px;
     padding: 30px 20px;
     box-sizing: border-box;
+}
+
+#feedback {
+    white-space: nowrap;
+    top: 40%;
+    left:0;
+    z-index: 10;
+    pointer-events: none;
+    position: fixed;
+    opacity: 0;
+}
+
+#game-page #feedback {
+    font-size: 80px;
+}
+
+#feedback.hot,
+#feedback.close,
+#feedback.warm,
+#feedback.cold {
+    animation: fly 4s ease-in-out forwards;
+}
+
+@keyframes fly {
+    0% { transform: translateX(200vw); opacity: 1;}
+    30% { transform: translateX(0); opacity: 1;}
+    70% { transform: translateX(0); opacity: 1;}
+    100% { transform: translateX(-200vw); opacity: 1;}
 }
 
 #game-page h1 {
@@ -57,6 +86,17 @@ body {
         0 0 12px rgba(191, 248, 236, 0.35);
     margin: 0;
 }
+
+#game-page #attempts {
+    font-size: 18px;
+    color: var(--golden);
+    background-color: var(--deep);
+    font-weight: bold;
+    padding: 8px 22px;
+    border: 2px solid var(--golden);
+    text-shadow: none;
+}
+
 
 #guess-input {
     text-align: center;
@@ -103,6 +143,7 @@ body {
     border: 2px solid transparent;
     cursor: pointer;
     transition: 0.3s ease;
+    border-radius: 46px;
 }
 
 #guess-btn:hover {
